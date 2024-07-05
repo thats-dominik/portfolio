@@ -1,12 +1,24 @@
 <template>
   <div>
     <nav>
-      <img src="@/assets/logo.png" alt="Logo" class="logo" />
+      <img src="@/assets/images/logo.png" alt="Logo" class="logo" />
       <ul>
-        <li><a href="#home" :class="{ active: activeSection === 'home' }">1. home</a></li>
-        <li><a href="#about" :class="{ active: activeSection === 'about' }">2. about</a></li>
-        <li><a href="#skills" :class="{ active: activeSection === 'skills' }">3. skills</a></li>
-        <li><a href="#contact" :class="{ active: activeSection === 'contact' }">4. contact</a></li>
+        <li>
+          <span>1.</span>
+          <a href="#home" :class="{ active: activeSection === 'home' }">home</a>
+        </li>
+        <li>
+          <span>2.</span>
+          <a href="#about" :class="{ active: activeSection === 'about' }">about</a>
+        </li>
+        <li>
+          <span>3.</span>
+          <a href="#skills" :class="{ active: activeSection === 'skills' }">skills</a>
+        </li>
+        <li>
+          <span>4.</span>
+          <a href="#contact" :class="{ active: activeSection === 'contact' }">contact</a>
+        </li>
         <li><button class="cv-button">cv</button></li>
       </ul>
     </nav>
@@ -75,7 +87,6 @@ nav {
   align-items: center;
   background-color: #C3AC9F;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -97,16 +108,28 @@ nav ul li {
   align-items: center;
 }
 
+nav span {
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #ffffff;
+  padding-bottom: 0.5rem;
+  position: relative;
+  margin-right: 0.3rem;
+}
+
 nav a {
+  font-weight: 400;
+  font-size: 1.3rem;
   text-decoration: none;
   color: #946c4b;
-  font-weight: bold;
   padding-bottom: 0.5rem;
   position: relative;
 }
 
 nav a.active::after {
   content: '';
+  margin-bottom: 0.3rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -116,15 +139,23 @@ nav a.active::after {
 }
 
 .cv-button {
+  font-family: Raleway;
+  font-size: 1.2rem;  
   background-color: transparent;
-  border: 2px solid #946c4b;
-  color: #946c4b;
-  padding: 0.5rem 1rem;
+  border: 0.1rem solid #ffffff;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  padding: 0.2rem 1rem;
   cursor: pointer;
+  margin-left: 0.3rem;
+  margin-right: 0.7rem;
+  margin-top: -0.5rem;
+  transition: 0.5s;
 }
 
 .cv-button:hover {
-  background-color: #946c4b;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #C3AC9F;
+  transition: 0.5s;
 }
 </style>

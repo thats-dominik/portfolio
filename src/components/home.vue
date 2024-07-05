@@ -9,7 +9,7 @@
       looking forward to exploring more programming languages and frameworks
       in the future.
     </p>
-    <button class="read-more">read more</button>
+    <a href="#about" class="read-more">read more</a>
   </section>
 </template>
 
@@ -24,6 +24,7 @@ export default {
   padding-top: 10rem;
   padding-left: 10rem;
   padding-right: 15rem;
+  margin-bottom: 2rem;
   background-color: #C3AC9F;
 }
 
@@ -51,13 +52,18 @@ export default {
 }
 
 .home p {
+  font-weight: 300;
   color: #ffffff;
   font-size: 2rem;
-  margin: 0.6rem;
+  margin: 0.6rem 0.6rem 2rem 0.6rem;
+  
+  line-height: 2.6rem;
+
 
 }
 
 .read-more {
+  text-decoration: none;
   font-family: Raleway;
   font-size: 1.2rem;  
   background-color: transparent;
@@ -69,10 +75,12 @@ export default {
   margin-left: 0.7rem;
   margin-right: 0.7rem;
   margin-top: 0.4rem;
+  transition: 0.5s;
 }
 
 .read-more:hover {
   background-color: #ffffff;
-  color: #946c4b;
+  color: #C3AC9F;
+  transition: 0.5s;
 }
 </style>

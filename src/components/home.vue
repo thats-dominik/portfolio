@@ -9,17 +9,25 @@
       looking forward to exploring more programming languages and frameworks
       in the future.
     </p>
-    <a href="#about" class="read-more">read more</a>
+    <a @click.prevent="scrollToAbout" class="read-more">read more</a>
   </section>
 </template>
 
 <script>
 export default {
   name: 'HomeSection',
+  methods: {
+    scrollToAbout() {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
 };
 </script>
 
-<style>
+<style scoped>
 .home {
   padding-top: 10rem;
   padding-left: 10rem;
@@ -29,18 +37,16 @@ export default {
 }
 
 .home h2 {
-
   color: #946c4b;
   font-size: 3rem;
   font-weight: 300;
   margin: 0.6rem;
 }
 
-.home h3 { 
+.home h3 {
   color: #ffffff;
   font-size: 2.5rem;
   margin: 0.6rem;
-
 }
 
 .home h1 {
@@ -48,7 +54,6 @@ export default {
   font-size: 3rem;
   font-weight: bold;
   margin: 0.6rem;
-
 }
 
 .home p {
@@ -56,16 +61,13 @@ export default {
   color: #ffffff;
   font-size: 2rem;
   margin: 0.6rem 0.6rem 2rem 0.6rem;
-  
   line-height: 2.6rem;
-
-
 }
 
 .read-more {
   text-decoration: none;
   font-family: Raleway;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
   background-color: transparent;
   border: 0.1rem solid #ffffff;
   border-radius: 0.3rem;

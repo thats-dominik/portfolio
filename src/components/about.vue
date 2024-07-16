@@ -3,13 +3,13 @@
     <h2>about me</h2>
     <h3>it & school</h3>
     <p>
-      currently, I'm studying at <strong>kantonsschule büelrain</strong>, where I'm mostly focused on economics and law. At <strong>berufsschule winterthur (bbw)</strong> and <strong>zli</strong>, I'm diving into various it topics like networking, java, and different frameworks, alongside management skills and <strong>many more</strong>.
+      currently, i'm studying at <strong>kantonsschule büelrain</strong>, where i'm mostly focused on economics and law. At <strong>berufsschule winterthur (bbw)</strong> and <strong>zli</strong>, i'm diving into various it topics like networking, java, and different frameworks, alongside management skills and <strong>many more</strong>.
     </p>
     <p>
-      outside of school, I'm all about personal projects, especially <strong>web development</strong>. I love <strong>designing</strong> websites, especially the frontend part.
+      outside of school, i'm all about personal projects, especially <strong>web development</strong>. i love <strong>designing</strong> websites, especially the frontend part.
     </p>
     <p>
-      I'm always eager to learn and explore new things in the it world, constantly striving to <strong>improve</strong> my skills.
+      i'm always eager to learn and explore new things in the it world, constantly striving to <strong>improve</strong> my skills.
     </p>
 
     <h3>private life</h3>
@@ -23,12 +23,14 @@
       as a person, i'm naturally curious and enjoy learning new things. <strong>communication</strong> is one of my strengths; i find it easy to engage in <strong>conversations</strong> with people, including strangers. i'm comfortable working both <strong>independently</strong> and in group settings. <strong>flexibility</strong> is a trait i value; i can quickly <strong>adjust</strong> my schedule to accommodate new tasks or opportunities.
     </p>
     <p>
-      If you'd like to check out some of my photos, feel free to click on the following <strong>social media</strong> accounts of mine:
+      if you'd like to check out some of my photos, feel free to click on the following <strong>social media</strong> accounts of mine:
     </p>
       <div class="social-media-item vsco">
-        <img src="@/assets/images/vsco.png" alt="VSCO Icon" class="social-icon" />
+        <a id="link-vsco" target=”_blank” href="https://vsco.co/dominik-kazar/gallery">
+        <img src="@/assets/images/vsco.png" alt="VSCO icon" class="social-icon vsco" />
+        </a>
         <p>
-          on <strong>vsco</strong>, I share a variety of images that I personally find appealing. what I appreciate about <strong>vsco</strong> is the minimalistic layout of my profile and the fact that all images are perfectly sized.
+          on <strong>vsco</strong>, i share a variety of images that i personally find appealing. what i appreciate about <strong>vsco</strong> is the minimalistic layout of my profile and the fact that all images are perfectly sized.
         </p>
       </div>
       <br>
@@ -36,7 +38,9 @@
         <p>
           on <strong>pinterest</strong>, i've organized all my images a bit, categorizing them by specific events, outings, or even seasons and years. this way, i have a clear overview of when everything happened.
         </p>
-        <img src="@/assets/images/pinterest.png" alt="Pinterest Icon" class="social-icon" />
+        <a id="link-pinterest" target=”_blank” href="https://www.pinterest.de/daedoeme/">
+          <img src="@/assets/images/pinterest.png" alt="Pinterest icon" class="social-icon pinterest" />
+          </a>
       </div>
   </section>
 </template>
@@ -94,11 +98,13 @@ strong {
 }
 
 .social-media-item.vsco {
+  margin-top: 1.5rem;
   grid-column: 1 / 2;
 }
 
 .social-media-item.pinterest {
-  grid-column: 2 / 3;
+  margin-top: -1rem;
+  grid-column: 4 / 5;
   justify-content: flex-end;
 }
 
@@ -112,4 +118,49 @@ strong {
   margin-left: 1rem;
   margin-right: 0;
 }
+.social-icon.vsco {
+  margin-top: 0.5rem;
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.social-icon.pinterest {
+
+  animation: swing 4s linear infinite;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#link-pinterest {
+  margin-left: -2rem;
+}
+
 </style>

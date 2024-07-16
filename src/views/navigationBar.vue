@@ -5,19 +5,19 @@
       <ul>
         <li>
           <span>1.</span>
-          <a href="#home" :class="{ active: activeSection === 'home' }">home</a>
+          <a @click.prevent="scrollToSection('home')" :class="{ active: activeSection === 'home' }">home</a>
         </li>
         <li>
           <span>2.</span>
-          <a href="#about" :class="{ active: activeSection === 'about' }">about</a>
+          <a @click.prevent="scrollToSection('about')" :class="{ active: activeSection === 'about' }">about</a>
         </li>
         <li>
           <span>3.</span>
-          <a href="#skills" :class="{ active: activeSection === 'skills' }">skills</a>
+          <a @click.prevent="scrollToSection('skills')" :class="{ active: activeSection === 'skills' }">skills</a>
         </li>
         <li>
           <span>4.</span>
-          <a href="#contact" :class="{ active: activeSection === 'contact' }">contact</a>
+          <a @click.prevent="scrollToSection('contact')" :class="{ active: activeSection === 'contact' }">contact</a>
         </li>
         <li><button class="cv-button">cv</button></li>
       </ul>
@@ -49,6 +49,12 @@ export default {
     };
   },
   methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
     onScroll() {
       const sections = document.querySelectorAll('section');
       let currentSection = 'home';
@@ -140,7 +146,7 @@ nav a.active::after {
 
 .cv-button {
   font-family: Raleway;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
   background-color: transparent;
   border: 0.1rem solid #ffffff;
   border-radius: 0.3rem;

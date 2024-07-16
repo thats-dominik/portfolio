@@ -26,7 +26,7 @@
       if you'd like to check out some of my photos, feel free to click on the following <strong>social media</strong> accounts of mine:
     </p>
       <div class="social-media-item vsco">
-        <a id="link-vsco" target=”_blank” href="https://vsco.co/dominik-kazar/gallery">
+        <a id="link-vsco" target="_blank" href="https://vsco.co/dominik-kazar/gallery">
         <img src="@/assets/images/vsco.png" alt="VSCO icon" class="social-icon vsco" />
         </a>
         <p>
@@ -38,9 +38,9 @@
         <p>
           on <strong>pinterest</strong>, i've organized all my images a bit, categorizing them by specific events, outings, or even seasons and years. this way, i have a clear overview of when everything happened.
         </p>
-        <a id="link-pinterest" target=”_blank” href="https://www.pinterest.de/daedoeme/">
+        <a id="link-pinterest" target="_blank" href="https://www.pinterest.de/daedoeme/">
           <img src="@/assets/images/pinterest.png" alt="Pinterest icon" class="social-icon pinterest" />
-          </a>
+        </a>
       </div>
   </section>
 </template>
@@ -57,6 +57,8 @@ export default {
   padding-left: 10rem;
   padding-right: 15rem;
   background-color: #C3AC9F;
+  max-width: 61rem;
+  margin: auto; /* Center the section */
 }
 
 .about h2 {
@@ -133,7 +135,6 @@ strong {
 }
 
 .social-icon.pinterest {
-
   animation: swing 4s linear infinite;
 }
 
@@ -163,4 +164,25 @@ strong {
   margin-left: -2rem;
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 1000px) {
+  .about {
+    padding: 2rem;
+  }
+
+  .social-media-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-media-item p,
+  .social-media-item img {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .social-media-item img {
+    margin: 1rem 0;
+  }
+}
 </style>

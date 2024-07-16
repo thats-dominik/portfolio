@@ -32,8 +32,9 @@ export default {
   padding-top: 10rem;
   padding-left: 10rem;
   padding-right: 15rem;
-  margin-bottom: 2rem;
   background-color: #C3AC9F;
+  max-width: 61rem;
+  margin: 0 auto 6rem auto;
 }
 
 .home h2 {
@@ -46,7 +47,7 @@ export default {
 .home h3 {
   color: #ffffff;
   font-size: 2.5rem;
-  margin: 0.6rem;
+  margin: 3rem 0.6rem 0.6rem 0.6rem;
 }
 
 .home h1 {
@@ -84,5 +85,16 @@ export default {
   background-color: #ffffff;
   color: #C3AC9F;
   transition: 0.5s;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1000px) {
+
+  .home h3 {
+    margin-top: 4rem;
+  }
+  .home {
+    padding: 2rem;
+  }
 }
 </style>

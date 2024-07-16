@@ -2,7 +2,10 @@
   <div>
     <nav>
       <img src="@/assets/images/logo.png" alt="Logo" class="logo" />
-      <ul>
+      <button class="menu-button" @click="toggleMenu">
+        <img src="@/assets/images/menue.png" alt="Menu" class="menu-icon" />
+      </button>
+      <ul :class="{ 'menu-open': menuOpen }">
         <li>
           <span>1.</span>
           <a @click.prevent="scrollToSection('home')" :class="{ active: activeSection === 'home' }">home</a>
@@ -46,6 +49,7 @@ export default {
   data() {
     return {
       activeSection: 'home',
+      menuOpen: false,
     };
   },
   methods: {
@@ -54,6 +58,7 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
+      this.menuOpen = false; // Close menu after clicking
     },
     onScroll() {
       const sections = document.querySelectorAll('section');
@@ -66,6 +71,9 @@ export default {
       });
       this.activeSection = currentSection;
     },
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll);
@@ -88,16 +96,31 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 62rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #C3AC9F;
   padding: 1rem 2rem;
   z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo {
   height: 40px;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 35px;
+  height: 35px;
 }
 
 nav ul {
@@ -107,6 +130,10 @@ nav ul {
   align-items: center;
   margin-right: 4rem;
   padding: 0;
+}
+
+nav ul.menu-open {
+  display: flex;
 }
 
 nav ul li {
@@ -163,5 +190,37 @@ nav a.active::after {
   background-color: #ffffff;
   color: #C3AC9F;
   transition: 0.5s;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1000px) {
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    width: 90%;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #C3AC9F;
+    z-index: 999;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  nav ul.menu-open {
+    display: flex;
+  }
 }
 </style>

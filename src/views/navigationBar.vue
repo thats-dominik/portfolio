@@ -22,7 +22,7 @@
           <span>4.</span>
           <a @click.prevent="scrollToSection('contact')" :class="{ active: activeSection === 'contact' }">contact</a>
         </li>
-        <li><button class="cv-button">cv</button></li>
+        <li><button class="cv-button" @click.prevent="openCV">cv</button></li>
       </ul>
     </nav>
     <HomeSection id="home" />
@@ -58,7 +58,10 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
-      this.menuOpen = false; // Close menu after clicking
+      this.menuOpen = false; 
+    },
+    openCV() {
+      window.open("http://atelier.thehams.name:9090/share.cgi?ssid=e4d185c54008486195f224747b501370", "_blank");
     },
     onScroll() {
       const sections = document.querySelectorAll('section');
@@ -126,13 +129,15 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem; 
   align-items: center;
   margin-right: 4rem;
   padding: 0;
+  padding-left: 1rem;
 }
 
 nav ul.menu-open {
+  margin-top: -0.2rem;
   display: flex;
 }
 
